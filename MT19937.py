@@ -1,5 +1,5 @@
-import random
-import sys
+from UniformDistribution import uniform_distribution
+from UniformDistribution import plot_unif_dist
 
 
 class MT19937:
@@ -38,6 +38,10 @@ class MT19937:
 
         # f: generator parameter
         self.f = 1812433253
+
+        # Auxiliary constants
+        self.RAND_MAX = 2 ** self.w - 1
+        self.RAND_MIN = 0
 
         # -- Miscellaneous variables -- #
 
@@ -84,11 +88,11 @@ class MT19937:
         self.index = 0
 
     def randomUnif(self):
-        return self.extractNumber() / 2 ** 32
+        return self.extractNumber() / 2 ** self.w
 
 
 if __name__ == "__main__":
-    seedVal = random.randrange(sys.maxsize)
-    rng = MT19937(seedVal)
-    for k in range(0, 100):
-        print(rng.randomUnif())
+    unif = uniform_distribution.UniformDistribution(0, 1)
+    unif_plot = plot_unif_dist.UnifDistPlot(unif)
+    unif_plot.plot()
+
