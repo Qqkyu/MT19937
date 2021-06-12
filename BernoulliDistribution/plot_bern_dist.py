@@ -19,8 +19,8 @@ class BernDistPlot:
 
         plt.bar(x, height=[self.amount - sample_bernoulli, sample_bernoulli])
 
-        plt.xlabel('Data')
-        plt.ylabel('Probability')
+        plt.xlabel('X~Bern(' + str(self.bern.p) + ')')
+        plt.ylabel('Count')
         plt.title("Bernoulli Distribution Histogram")
 
         plt.xticks(x, ['0', '1'])

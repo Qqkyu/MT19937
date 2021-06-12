@@ -1,6 +1,7 @@
 from UniformDistribution import uniform_distribution, plot_unif_dist
 from BernoulliDistribution import bernoulli_distribution, plot_bern_dist
 from BinomialDistribution import binomial_distribution, plot_binom_dist
+from PoissonDistribution import poisson_distribution, plot_poiss_dist
 
 
 class MT19937:
@@ -99,6 +100,9 @@ if __name__ == "__main__":
     #bern = bernoulli_distribution.BernoulliDistribution(0.5)
     #bern_plot = plot_bern_dist.BernDistPlot(bern, 100000)
     #bern_plot.plot()
-    binom = binomial_distribution.BinomialDistribution(0.5, 20)
-    binom_plot = plot_binom_dist.BinomDistPlot(binom)
-    binom_plot.plot()
+    #binom = binomial_distribution.BinomialDistribution(0.5, 10)
+    #binom_plot = plot_binom_dist.BinomDistPlot(binom)
+    #binom_plot.plot()
+    poiss = poisson_distribution.PoissonDistribution(1400, 40)
+    poiss_plot = plot_poiss_dist.PoissDistPlot(poiss)
+    poiss_plot.plot()

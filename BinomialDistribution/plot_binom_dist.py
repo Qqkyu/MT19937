@@ -19,11 +19,9 @@ class BinomDistPlot:
         plt.bar(x, height=sample_binom)
 
         plt.xlabel('X~Binom[' + str(self.binom.n) + ',' + str(self.binom.p) + ']')
-        plt.ylabel('Probability')
+        plt.ylabel('Count')
         plt.title("Binomial Distribution Histogram")
 
-        plt.xticks(x, range(self.binom.n + 1))
-
-        plt.axis(ymin=0, ymax=1)  # x_start, x_end, y_start, y_end
+        plt.axis(ymin=0, ymax=max(sample_binom) + max(sample_binom) / 10)  # x_start, x_end, y_start, y_end
 
         plt.show()
