@@ -14,16 +14,16 @@ class BinomDistPlot:
         """Create and show a plot"""
         sample_binom = self.data
 
-        x = np.arange(0, self.binom.n)
+        x = np.arange(0, self.binom.n + 1)
 
         plt.bar(x, height=sample_binom)
 
-        plt.xlabel('Data')
+        plt.xlabel('X~Binom[' + str(self.binom.n) + ',' + str(self.binom.p) + ']')
         plt.ylabel('Probability')
-        plt.title("Bernoulli Distribution Histogram")
+        plt.title("Binomial Distribution Histogram")
 
-        plt.xticks(x, range(0, self.binom.n))
+        plt.xticks(x, range(self.binom.n + 1))
 
-        plt.axis(ymin=0, ymax=self.binom.p)  # x_start, x_end, y_start, y_end
+        plt.axis(ymin=0, ymax=1)  # x_start, x_end, y_start, y_end
 
         plt.show()

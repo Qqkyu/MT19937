@@ -12,19 +12,24 @@ class BinomialDistribution:
     """Generator implementing binomial distribution using Bernoulli distribution"""
 
     def __init__(self, p, n):
-        """Initialize MT19937 and coefficients"""
+        """Initialize coefficients"""
         self.bern = bernoulli_distribution.BernoulliDistribution(p)
 
         self.p = p
         self.n = n
 
-        self.r = list(range(n))
+        self.r = list(range(n + 1))
 
-        self.dist = [self.pmf(r_val) for r_val in self.r]
+        #self.dist = [self.pmf(r_val) for r_val in self.r]
+        self.dist = [0] * (n + 1)
 
     def getData(self):
         """Return distribution"""
+        for i in range(0, self.n):
+            successful_trials = self.bern.getData(self.n)
+            self.dist[successful_trials] += (1 / self.n)
         return self.dist
+
 
     def pmf(self, r):
         """Probability mass function"""
