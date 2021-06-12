@@ -1,6 +1,8 @@
 from UniformDistribution import uniform_distribution
 from UniformDistribution import plot_unif_dist
 
+from BernoulliDistribution import bernoulli_distribution, plot_bern_dist
+
 
 class MT19937:
     """Mersenne Twister standard implementation (MT19937)"""
@@ -92,7 +94,9 @@ class MT19937:
 
 
 if __name__ == "__main__":
-    unif = uniform_distribution.UniformDistribution(0, 1)
-    unif_plot = plot_unif_dist.UnifDistPlot(unif)
-    unif_plot.plot()
-
+    #unif = uniform_distribution.UniformDistribution(1, 2)
+    #unif_plot = plot_unif_dist.UnifDistPlot(unif)
+    #unif_plot.plot()
+    bern = bernoulli_distribution.BernoulliDistribution(0.5)
+    bern_plot = plot_bern_dist.BernDistPlot(bern, 10000)
+    bern_plot.plot()

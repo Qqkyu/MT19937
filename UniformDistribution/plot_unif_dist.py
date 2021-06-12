@@ -22,7 +22,8 @@ class UnifDistPlot:
 
         plt.xlabel('X~U[' + str(self.low) + ',' + str(self.high) + ']')
         plt.ylabel('Count')
-        plt.title("Uniform Distribution Histogram (Bin size " + str(self.bins) + ")")
+        plt.title("Uniform Distribution Histogram")
+
         plt.axis([self.low, self.high, 0, self.y_end])  # x_start, x_end, y_start, y_end
         plt.grid(True)
 
