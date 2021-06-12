@@ -1,7 +1,4 @@
-import MT19937
-
-import random
-import sys
+from UniformDistribution import uniform_distribution
 
 
 class BernoulliDistribution:
@@ -9,16 +6,12 @@ class BernoulliDistribution:
 
     def __init__(self, p):
         """Initialize MT19937 and coefficients"""
-        seed_val = random.randrange(sys.maxsize)
-        self.MT19937 = MT19937.MT19937(seed_val)
-
+        self.unif = uniform_distribution.UniformDistribution(0, 1)
         self.p = p
 
-        self.RAND_MAX = self.MT19937.RAND_MAX
-
     def extractNumber(self):
-        number = self.MT19937.randomUnif()
-        return number > self.p
+        number = self.unif.extractNumber()
+        return number < self.p
 
     def getData(self, amount):
         """Return number of successful trials"""

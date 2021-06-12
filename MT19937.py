@@ -1,6 +1,4 @@
-from UniformDistribution import uniform_distribution
-from UniformDistribution import plot_unif_dist
-
+from UniformDistribution import uniform_distribution, plot_unif_dist
 from BernoulliDistribution import bernoulli_distribution, plot_bern_dist
 
 
@@ -98,5 +96,5 @@ if __name__ == "__main__":
     #unif_plot = plot_unif_dist.UnifDistPlot(unif)
     #unif_plot.plot()
     bern = bernoulli_distribution.BernoulliDistribution(0.5)
-    bern_plot = plot_bern_dist.BernDistPlot(bern, 10000)
+    bern_plot = plot_bern_dist.BernDistPlot(bern, 100000)
     bern_plot.plot()
