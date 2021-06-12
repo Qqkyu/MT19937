@@ -2,7 +2,7 @@ from UniformDistribution import uniform_distribution
 
 
 class BernoulliDistribution:
-    """Generator implementing Bernoulli distribution using MT19937"""
+    """Generator implementing Bernoulli distribution using uniform distribution"""
 
     def __init__(self, p):
         """Initialize MT19937 and coefficients"""

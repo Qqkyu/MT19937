@@ -1,5 +1,6 @@
 from UniformDistribution import uniform_distribution, plot_unif_dist
 from BernoulliDistribution import bernoulli_distribution, plot_bern_dist
+from BinomialDistribution import binomial_distribution, plot_binom_dist
 
 
 class MT19937:
@@ -95,6 +96,9 @@ if __name__ == "__main__":
     #unif = uniform_distribution.UniformDistribution(1, 2)
     #unif_plot = plot_unif_dist.UnifDistPlot(unif)
     #unif_plot.plot()
-    bern = bernoulli_distribution.BernoulliDistribution(0.5)
-    bern_plot = plot_bern_dist.BernDistPlot(bern, 100000)
-    bern_plot.plot()
+    #bern = bernoulli_distribution.BernoulliDistribution(0.5)
+    #bern_plot = plot_bern_dist.BernDistPlot(bern, 100000)
+    #bern_plot.plot()
+    binom = binomial_distribution.BinomialDistribution(0.5, 20)
+    binom_plot = plot_binom_dist.BinomDistPlot(binom)
+    binom_plot.plot()
