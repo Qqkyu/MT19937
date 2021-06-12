@@ -2,6 +2,8 @@ from UniformDistribution import uniform_distribution, plot_unif_dist
 from BernoulliDistribution import bernoulli_distribution, plot_bern_dist
 from BinomialDistribution import binomial_distribution, plot_binom_dist
 from PoissonDistribution import poisson_distribution, plot_poiss_dist
+from ExponentialDistribution import exponential_distribution, plot_exp_dist
+from NormalDistribution import normal_distribution, plot_norm_dist
 
 
 class MT19937:
@@ -103,6 +105,12 @@ if __name__ == "__main__":
     #binom = binomial_distribution.BinomialDistribution(0.5, 10)
     #binom_plot = plot_binom_dist.BinomDistPlot(binom)
     #binom_plot.plot()
-    poiss = poisson_distribution.PoissonDistribution(1400, 40)
-    poiss_plot = plot_poiss_dist.PoissDistPlot(poiss)
-    poiss_plot.plot()
+    #poiss = poisson_distribution.PoissonDistribution(100000, 10)
+    #poiss_plot = plot_poiss_dist.PoissDistPlot(poiss)
+    #poiss_plot.plot()
+    #exp = exponential_distribution.ExponentialDistribution(0.1)
+    #exp_plot = plot_exp_dist.ExpDistPlot(exp, 10000)
+    #exp_plot.plot()
+    norm = normal_distribution.NormalDistribution(0, 1)
+    norm_plot = plot_norm_dist.NormDistPlot(norm)
+    norm_plot.plot()
