@@ -1,4 +1,4 @@
-import MT19937
+from MersenneTwister import MT19937
 
 import random
 import sys

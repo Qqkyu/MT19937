@@ -1,11 +1,3 @@
-from UniformDistribution import uniform_distribution, plot_unif_dist
-from BernoulliDistribution import bernoulli_distribution, plot_bern_dist
-from BinomialDistribution import binomial_distribution, plot_binom_dist
-from PoissonDistribution import poisson_distribution, plot_poiss_dist
-from ExponentialDistribution import exponential_distribution, plot_exp_dist
-from NormalDistribution import normal_distribution, plot_norm_dist
-
-
 class MT19937:
     """Mersenne Twister standard implementation (MT19937)"""
 
@@ -58,6 +50,7 @@ class MT19937:
         self.upper_mask = (~self.lower_mask) & ((1 << self.w) - 1)
 
         # -- Initialize generator from a seed -- #
+        self.seed = seed
         self.index = self.n
         self.MT.append(seed)
         for i in range(1, self.n):
@@ -93,24 +86,3 @@ class MT19937:
 
     def randomUnif(self):
         return self.extractNumber() / 2 ** self.w
-
-
-if __name__ == "__main__":
-    #unif = uniform_distribution.UniformDistribution(1, 2)
-    #unif_plot = plot_unif_dist.UnifDistPlot(unif)
-    #unif_plot.plot()
-    #bern = bernoulli_distribution.BernoulliDistribution(0.5)
-    #bern_plot = plot_bern_dist.BernDistPlot(bern, 100000)
-    #bern_plot.plot()
-    #binom = binomial_distribution.BinomialDistribution(0.5, 10)
-    #binom_plot = plot_binom_dist.BinomDistPlot(binom)
-    #binom_plot.plot()
-    #poiss = poisson_distribution.PoissonDistribution(100000, 10)
-    #poiss_plot = plot_poiss_dist.PoissDistPlot(poiss)
-    #poiss_plot.plot()
-    #exp = exponential_distribution.ExponentialDistribution(0.1)
-    #exp_plot = plot_exp_dist.ExpDistPlot(exp, 10000)
-    #exp_plot.plot()
-    norm = normal_distribution.NormalDistribution(0, 1)
-    norm_plot = plot_norm_dist.NormDistPlot(norm)
-    norm_plot.plot()

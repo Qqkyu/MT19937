@@ -1,6 +1,16 @@
 from UniformDistribution import uniform_distribution
 
+from scipy import stats
+
 import numpy as np
+
+
+def test(data, alpha=1e-3):
+    k2, p = stats.normaltest(data)
+    if p < alpha:  # null hypothesis: data comes from a normal distribution
+        print("The null hypothesis can be rejected")
+    else:
+        print("The null hypothesis cannot be rejected")
 
 
 class NormalDistribution:
