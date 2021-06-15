@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 class UnifDistPlot:
     """Creates plot of uniformly distributed numbers"""
-    def __init__(self, unif_dist, amount=1000000, bins=100, y_end=100000):
+    def __init__(self, unif_dist, amount=1000000, bins=1000, y_end=10000):
         """Initialize variables"""
         self.unif = unif_dist
 
